@@ -1,0 +1,17 @@
+config\JPAConfig.class
+services\UserService.class
+controller\UserController.class
+entity\Video.class
+dao\VideoDao.class
+dao\UserDao.class
+services\CategoryService.class
+controller\VideoController.class
+entity\Category.class
+entity\User.class
+entity\Video$VideoBuilder.class
+controller\CategoryController.class
+entity\Category$CategoryBuilder.class
+entity\User$UserBuilder.class
+config\EncodingFilter.class
+services\VideoService.class
+dao\CategoryDao.class
