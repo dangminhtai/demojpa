@@ -31,4 +31,8 @@ public class CategoryService {
     public List<Category> findAll() {
         return categoryDao.findAll();
     }
+
+    public List<Category> findByUserId(int userId) {
+        return categoryDao.findByUserId(userId);
+    }
 }

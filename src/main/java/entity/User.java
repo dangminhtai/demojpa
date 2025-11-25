@@ -35,9 +35,12 @@ public class User {
     @Column(name = "images", columnDefinition = "nvarchar(500)")
     private String images;
     
-    @Column(name = "admin")
-    private boolean admin;
+    @Column(name = "roleid")
+    private int roleid;
     
     @Column(name = "active")
     private boolean active;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private java.util.List<Category> categories;
 }

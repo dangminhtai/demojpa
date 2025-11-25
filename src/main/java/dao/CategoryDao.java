@@ -79,4 +79,15 @@ public class CategoryDao {
             em.close();
         }
     }
+
+    public List<Category> findByUserId(int userId) {
+        EntityManager em = JPAConfig.getEntityManager();
+        try {
+            TypedQuery<Category> query = em.createQuery("SELECT c FROM Category c WHERE c.user.id = :userId", Category.class);
+            query.setParameter("userId", userId);
+            return query.getResultList();
+        } finally {
+            em.close();
+        }
+    }
 }

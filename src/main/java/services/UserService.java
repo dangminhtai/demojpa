@@ -33,6 +33,14 @@ public class UserService {
     public List<User> findAll() {
         return userDao.findAll();
     }
+
+    public User login(String username, String password) {
+        User user = userDao.findByUsername(username);
+        if (user != null && user.getPassword().equals(password)) {
+            return user;
+        }
+        return null;
+    }
     
     private void validate(User user) throws Exception {
         if (user.getUsername() == null || user.getUsername().trim().isEmpty()) {

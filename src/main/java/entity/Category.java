@@ -36,4 +36,8 @@ public class Category implements Serializable {
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     private List<Video> videos;
+
+    @ManyToOne
+    @JoinColumn(name = "userid")
+    private User user;
 }

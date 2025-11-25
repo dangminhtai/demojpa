@@ -79,4 +79,16 @@ public class UserDao {
             em.close();
         }
     }
+
+    public User findByUsername(String username) {
+        EntityManager em = JPAConfig.getEntityManager();
+        try {
+            TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class);
+            query.setParameter("username", username);
+            List<User> users = query.getResultList();
+            return users.isEmpty() ? null : users.get(0);
+        } finally {
+            em.close();
+        }
+    }
 }
